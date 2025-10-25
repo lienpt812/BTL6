@@ -1,0 +1,244 @@
+{
+  "config": {
+    "csv_path": "creditcard.csv",
+    "target_col": "Class",
+    "test_size": 0.2,
+    "random_state": 42,
+    "n_splits": 5,
+    "recall_target": 0.9,
+    "cost_fn": 0.0,
+    "cost_fp": 0.0,
+    "use_smote": false,
+    "output_dir": "output_fraud",
+    "numeric_cols": [
+      "Time",
+      "V1",
+      "V2",
+      "V3",
+      "V4",
+      "V5",
+      "V6",
+      "V7",
+      "V8",
+      "V9",
+      "V10",
+      "V11",
+      "V12",
+      "V13",
+      "V14",
+      "V15",
+      "V16",
+      "V17",
+      "V18",
+      "V19",
+      "V20",
+      "V21",
+      "V22",
+      "V23",
+      "V24",
+      "V25",
+      "V26",
+      "V27",
+      "V28",
+      "Amount"
+    ],
+    "categorical_cols": []
+  },
+  "cv": {
+    "decision_tree_pr_auc": 0.8386202753190352,
+    "svm_rbf_pr_auc": 0.8520920345486728
+  },
+  "test_eval": {
+    "decision_tree": {
+      "name": "DecisionTree",
+      "roc_auc": 0.9072141714421149,
+      "pr_auc": 0.8472263936103569,
+      "confusion_matrix@0.5": [
+        [
+          4698,
+          124
+        ],
+        [
+          13,
+          85
+        ]
+      ],
+      "classification_report@0.5": {
+        "0": {
+          "precision": 0.9972405009552112,
+          "recall": 0.9742845292409789,
+          "f1-score": 0.9856288681422427,
+          "support": 4822.0
+        },
+        "1": {
+          "precision": 0.40669856459330145,
+          "recall": 0.8673469387755102,
+          "f1-score": 0.5537459283387622,
+          "support": 98.0
+        },
+        "accuracy": 0.9721544715447155,
+        "macro avg": {
+          "precision": 0.7019695327742563,
+          "recall": 0.9208157340082446,
+          "f1-score": 0.7696873982405025,
+          "support": 4920.0
+        },
+        "weighted avg": {
+          "precision": 0.9854776737675145,
+          "recall": 0.9721544715447155,
+          "f1-score": 0.9770263217803034,
+          "support": 4920.0
+        }
+      },
+      "pr_curve_path": "output_fraud\\PR_curve_DecisionTree.png",
+      "roc_curve_path": "output_fraud\\ROC_curve_DecisionTree.png"
+    },
+    "svm_rbf": {
+      "name": "SVM_RBF",
+      "roc_auc": 0.9839109015651055,
+      "pr_auc": 0.8279784320860674,
+      "confusion_matrix@0.5": [
+        [
+          4805,
+          17
+        ],
+        [
+          24,
+          74
+        ]
+      ],
+      "classification_report@0.5": {
+        "0": {
+          "precision": 0.9950300269206875,
+          "recall": 0.9964744919120697,
+          "f1-score": 0.9957517355714434,
+          "support": 4822.0
+        },
+        "1": {
+          "precision": 0.8131868131868132,
+          "recall": 0.7551020408163265,
+          "f1-score": 0.783068783068783,
+          "support": 98.0
+        },
+        "accuracy": 0.9916666666666667,
+        "macro avg": {
+          "precision": 0.9041084200537504,
+          "recall": 0.875788266364198,
+          "f1-score": 0.8894102593201132,
+          "support": 4920.0
+        },
+        "weighted avg": {
+          "precision": 0.9914079466471266,
+          "recall": 0.9916666666666667,
+          "f1-score": 0.9915153678183417,
+          "support": 4920.0
+        }
+      },
+      "pr_curve_path": "output_fraud\\PR_curve_SVM_RBF.png",
+      "roc_curve_path": "output_fraud\\ROC_curve_SVM_RBF.png"
+    }
+  },
+  "thresholds": {
+    "decision_tree_recall_target": {
+      "threshold": 0.0,
+      "precision": 0.01991869918699187,
+      "recall": 1.0,
+      "confusion": {
+        "threshold": 0.0,
+        "confusion_matrix": [
+          [
+            0,
+            4822
+          ],
+          [
+            0,
+            98
+          ]
+        ],
+        "classification_report": {
+          "0": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 4822.0
+          },
+          "1": {
+            "precision": 0.01991869918699187,
+            "recall": 1.0,
+            "f1-score": 0.039059386209645275,
+            "support": 98.0
+          },
+          "accuracy": 0.01991869918699187,
+          "macro avg": {
+            "precision": 0.009959349593495936,
+            "recall": 0.5,
+            "f1-score": 0.019529693104822637,
+            "support": 4920.0
+          },
+          "weighted avg": {
+            "precision": 0.0003967545773018706,
+            "recall": 0.01991869918699187,
+            "f1-score": 0.0007780121643384628,
+            "support": 4920.0
+          }
+        }
+      }
+    },
+    "svm_rbf_recall_target": {
+      "threshold": 5.411194848195108e-07,
+      "precision": 0.01991869918699187,
+      "recall": 1.0,
+      "confusion": {
+        "threshold": 5.411194848195108e-07,
+        "confusion_matrix": [
+          [
+            0,
+            4822
+          ],
+          [
+            0,
+            98
+          ]
+        ],
+        "classification_report": {
+          "0": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 4822.0
+          },
+          "1": {
+            "precision": 0.01991869918699187,
+            "recall": 1.0,
+            "f1-score": 0.039059386209645275,
+            "support": 98.0
+          },
+          "accuracy": 0.01991869918699187,
+          "macro avg": {
+            "precision": 0.009959349593495936,
+            "recall": 0.5,
+            "f1-score": 0.019529693104822637,
+            "support": 4920.0
+          },
+          "weighted avg": {
+            "precision": 0.0003967545773018706,
+            "recall": 0.01991869918699187,
+            "f1-score": 0.0007780121643384628,
+            "support": 4920.0
+          }
+        }
+      }
+    },
+    "decision_tree_min_cost": null,
+    "svm_rbf_min_cost": null
+  },
+  "artifacts": {
+    "pr_curve_decision_tree": "output_fraud\\PR_curve_DecisionTree.png",
+    "roc_curve_decision_tree": "output_fraud\\ROC_curve_DecisionTree.png",
+    "pr_curve_svm_rbf": "output_fraud\\PR_curve_SVM_RBF.png",
+    "roc_curve_svm_rbf": "output_fraud\\ROC_curve_SVM_RBF.png",
+    "dt_feature_importance_csv": "output_fraud\\decision_tree_feature_importance.csv",
+    "decision_tree_structure": "output_fraud\\decision_tree_simple.png",
+    "svm_rbf_3d_boundary": "output_fraud\\svm_rbf_boundary_3d.png"
+  }
+}
